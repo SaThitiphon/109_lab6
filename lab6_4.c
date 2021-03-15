@@ -53,6 +53,19 @@ int main()
             min = i + 1;
         }
     }
+    int c = 0;
+    for(i=0;i<n;i++)
+    {
+        if(count[i]==count[i+1])
+        {
+            c++;
+        }
+    }
+    
+    if(c==n-1)
+    {
+        min++;
+    }
     printf("%d %d",max,min);
     
 }
