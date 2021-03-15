@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int n,i,j,k;
+    int n,i,j,k,ma,mi;
     scanf("%d",&n);
     int a[n][2],count[n],b[n];
     for(i=0;i<n;i++)
@@ -28,9 +28,22 @@ int main()
             }
         }
     }
-    for(i=0;i<n;i++)
+    int max,min;
+    ma = count[0];
+    mi = count[0];
+    for(i=1;i<n;i++)
     {
-        printf("%d ",count[i]);
+        if(ma<count[i])
+        {
+            ma = count[i];
+            max = i + 1;
+        }
+        if(mi>count[i])
+        {
+            mi = count[i];
+            min = i + 1;
+        }
     }
+    printf("%d %d",max,min);
     
 }
