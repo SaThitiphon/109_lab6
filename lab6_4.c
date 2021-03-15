@@ -10,6 +10,10 @@ int main()
     }
     for(i=0;i<n;i++)
     {
+        count[i] = 0;
+    }
+    for(i=0;i<n;i++)
+    {
         for(j=0;j<2;j++)
         {
             scanf("%d",&a[i][j]);
@@ -30,7 +34,9 @@ int main()
     }
     int max,min;
     ma = count[0];
+    max = 1;
     mi = count[0];
+    min = 1;
     for(i=1;i<n;i++)
     {
         if(ma<count[i])
@@ -38,6 +44,9 @@ int main()
             ma = count[i];
             max = i + 1;
         }
+    }
+    for(i=1;i<n;i++)
+    {
         if(mi>count[i])
         {
             mi = count[i];
